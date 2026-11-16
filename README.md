@@ -23,7 +23,8 @@ npm run build
 - Homepage photos in `public/images/` are illustrative Unsplash stock imagery, not SOLT activities. Replace them with approved, properly consented SOLT photography when available.
 - Add the official 30-Day Healthy Lifestyle Eating Plan PDF URL to `healthyLifestylePlanPdfUrl` in `src/lib/content.ts` when SOLT provides it.
 - Confirm the production domain and set `NEXT_PUBLIC_SITE_URL` to its origin (for example, `https://www.example.org`) to enable absolute sitemap URLs and the sitemap declaration in `robots.txt`.
-- Connect and review the contact, volunteer and donation flows before making them active.
+- The contact form opens the user configured email app with details addressed to `soltrustngo@gmail.com`; users send the message from that app.
+- Review the volunteer and donation flows before making them active.
 - Add approved privacy, terms and nonprofit registration information.
 
 ## Structure
