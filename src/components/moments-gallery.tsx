@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { DonatePrompt } from "@/components/ui";
 
 type MomentCategory = "Blood donation & healthcare" | "Community gatherings & meetings";
 
@@ -196,6 +197,7 @@ export function MomentsGallery() {
             </section>
           );
         })}
+        <DonatePrompt />
       </div>
 
       <dialog

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { annualInitiatives, focusAreas } from "@/lib/content";
 import { PageHero } from "@/components/page-shell";
-import { Container } from "@/components/ui";
+import { Container, DonatePrompt } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Our Work",
@@ -27,6 +27,7 @@ export default function WorkPage() {
                 </div>
                 <h2>{area.title}</h2>
                 <p>{area.description}</p>
+                <DonatePrompt />
               </article>
             ))}
           </div>
@@ -40,10 +41,14 @@ export default function WorkPage() {
             <div className="initiative-grid">
               {annualInitiatives.map((initiative) => (
                 <article className="initiative-card" key={initiative.number}>
+                  <div className="initiative-image">
+                    <Image src={initiative.image} alt={initiative.imageAlt} fill sizes="(max-width: 900px) 100vw, 33vw" />
+                  </div>
                   <span className="initiative-number">{initiative.number}</span>
                   <h3>{initiative.title}</h3>
                   <p>{initiative.description}</p>
                   <p className="initiative-target">{initiative.target}</p>
+                  <DonatePrompt />
                 </article>
               ))}
             </div>

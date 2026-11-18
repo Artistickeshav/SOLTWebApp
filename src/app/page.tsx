@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowDown, ArrowRight } from "lucide-react";
-import { ButtonLink, Container, Eyebrow, SectionHeading } from "@/components/ui";
+import { ButtonLink, Container, DonatePrompt, Eyebrow, SectionHeading } from "@/components/ui";
 import { annualInitiatives, focusAreas, healthyLifestylePlanPdfUrl, impactPillars, instagramUrl } from "@/lib/content";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 
@@ -41,14 +41,21 @@ export default function HomePage() {
         <div className="focus-grid">{focusAreas.map((area) => <article className="focus-card" key={area.number}>
           <div className="focus-image"><Image src={area.image} alt={area.alt} fill sizes="(max-width: 620px) 100vw, (max-width: 900px) 33vw, 380px" unoptimized /></div>
           <div className="focus-meta"><span>{area.focusLabel}</span><ArrowRight size={15} aria-hidden="true" /></div>
-          <h3>{area.title}</h3><p>{area.description}</p><ButtonLink href="/our-work" variant="text">Explore</ButtonLink>
+          <h3>{area.title}</h3><p>{area.description}</p><ButtonLink href="/our-work" variant="text">Explore</ButtonLink><DonatePrompt />
         </article>)}</div>
       </Container></section>
 
       <section className="programs"><Container>
         <div className="programs-heading"><SectionHeading eyebrow="Planned priorities" title="Bringing care and opportunity closer." description="Our upcoming initiatives aim to improve access to community health services, support safer learning environments and encourage practical reuse." /></div>
         <div className="program-list">
-          {annualInitiatives.map((initiative) => <article className="program-row" key={initiative.number}><span className="program-index">{initiative.number}</span><h3>{initiative.title}</h3><p>{initiative.description}</p><span className="program-arrow" aria-hidden="true">↗</span></article>)}
+          {annualInitiatives.map((initiative) => (
+            <article className="program-row" key={initiative.number}>
+              <span className="program-index">{initiative.number}</span>
+              <div className="program-row-main"><h3>{initiative.title}</h3><DonatePrompt /></div>
+              <p>{initiative.description}</p>
+              <span className="program-arrow" aria-hidden="true">↗</span>
+            </article>
+          ))}
         </div>
         <div className="program-foot"><ButtonLink href="/our-work" variant="outline">Explore our work <ArrowRight size={14} /></ButtonLink></div>
       </Container></section>
@@ -69,7 +76,7 @@ export default function HomePage() {
 
       <section className="involved"><Container className="involved-layout"><div><Eyebrow light>There’s a place for you here</Eyebrow><h2>Care grows when we grow it together.</h2></div><div className="involved-options"><ButtonLink href="/get-involved#volunteer" variant="outline">Volunteer</ButtonLink><ButtonLink href="/get-involved#partner" variant="outline">Partner with us</ButtonLink><ButtonLink href="/get-involved#donate" variant="outline">Donate</ButtonLink></div></Container></section>
 
-      <section className="social"><Container><div className="social-header"><div><Eyebrow>Stay connected</Eyebrow><h2>Life, in the everyday.</h2></div><a className="text-link" href={instagramUrl} target="_blank" rel="noreferrer">Follow us on Instagram <span>@springoflifetrust</span> <span aria-hidden="true">↗</span></a></div><div className="social-grid" aria-label="Illustrative community and wellbeing imagery"><div className="social-tile"><Image src={focusAreas[0].image} alt="Illustrative stock image related to women’s health" fill sizes="(max-width: 620px) 50vw, 25vw" /></div><div className="social-tile"><Image src={focusAreas[1].image} alt="Illustrative stock image of fresh foods" fill sizes="(max-width: 620px) 50vw, 25vw" /></div><div className="social-tile"><Image src={focusAreas[2].image} alt="Illustrative stock image of a group spending time together" fill sizes="(max-width: 620px) 50vw, 25vw" /></div><div className="social-tile"><Image src="/images/community-gathering.jpg" alt="Illustrative stock image of a community gathering" fill sizes="(max-width: 620px) 50vw, 25vw" /></div></div><p className="social-placeholder">Illustrative imagery; these are not photographs of Spring of Life Trust activities.</p></Container></section>
+      <section className="social"><Container><div className="social-header"><div><Eyebrow>Stay connected</Eyebrow><h2>Life, in the everyday.</h2></div><a className="text-link" href={instagramUrl} target="_blank" rel="noreferrer">Follow us on Instagram <span>@springoflifetrust</span> <span aria-hidden="true">↗</span></a></div><div className="social-grid" aria-label="Illustrative community and wellbeing imagery"><div className="social-tile"><Image src={focusAreas[0].image} alt="Illustrative stock image related to women’s health" fill sizes="(max-width: 620px) 50vw, 25vw" /></div><div className="social-tile"><Image src={focusAreas[1].image} alt="Illustrative stock image of fresh foods" fill sizes="(max-width: 620px) 50vw, 25vw" /></div><div className="social-tile"><Image src={focusAreas[2].image} alt="Illustrative stock image of a group spending time together" fill sizes="(max-width: 620px) 50vw, 25vw" /></div><div className="social-tile"><Image src="/images/community-gathering.jpg" alt="Illustrative stock image of a community gathering" fill sizes="(max-width: 620px) 50vw, 25vw" /></div></div><p className="social-placeholder">Illustrative imagery; these are not photographs of Spring of Life Trust activities.</p><DonatePrompt /></Container></section>
 
       <section className="final-cta"><Container><Eyebrow light>A healthier future, together</Eyebrow><h2>Together, we can create healthier communities.</h2><p>Bring your time, ideas or support to Spring of Life Trust.</p><ButtonLink href="/get-involved">Get involved</ButtonLink></Container></section>
     </>

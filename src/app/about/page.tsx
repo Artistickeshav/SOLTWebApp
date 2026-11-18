@@ -44,6 +44,29 @@ export default function AboutPage() {
               <p>
                 In recognition of her exceptional, tangible commitment to community service, she is a proud recipient of the prestigious Paul Harris Award. Today, Ms. Singh continues to channel her unwavering passion into Spring of Life Trust, working tirelessly to empower vulnerable communities and transform lives through accessible, compassionate healthcare.
               </p>
+              <div className="founder-affiliations" aria-label="Founder service affiliations">
+                <p className="eyebrow">Service &amp; leadership</p>
+                <div className="founder-affiliation-logos">
+                  <div className="founder-affiliation-logo founder-affiliation-logo-blood-bank">
+                    <Image
+                      src="/images/rotary-blood-bank-delhi.webp"
+                      alt="Rotary Blood Bank Delhi — Every Drop Counts"
+                      width={1200}
+                      height={800}
+                      sizes="(max-width: 760px) 45vw, 200px"
+                    />
+                  </div>
+                  <div className="founder-affiliation-logo founder-affiliation-logo-rotary">
+                    <Image
+                      src="/images/rotary-membership.png"
+                      alt="Rotary logo"
+                      width={3200}
+                      height={1200}
+                      sizes="(max-width: 760px) 45vw, 240px"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>

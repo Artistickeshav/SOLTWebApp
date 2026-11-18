@@ -26,3 +26,7 @@ export function ButtonLink({ href, children, variant = "primary", className = ""
 }) {
   return <Link className={`button button-${variant} ${className}`} href={href}>{children}<span aria-hidden="true">↗</span></Link>;
 }
+
+export function DonatePrompt() {
+  return <Link className="donate-prompt" href="/get-involved#donate">Donate today for better tomorrow</Link>;
+}
